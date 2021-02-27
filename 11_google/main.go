@@ -9,6 +9,9 @@ import (
 // Result of search.
 type Result string
 
+// Search function.
+type Search func(query string) Result
+
 // Google invokes Web, Image and Video searches for query serially.
 func Google(query string) (results []Result) {
 	results = append(results, Web(query))
@@ -23,9 +26,6 @@ var (
 	Image = fakeSearch("image")
 	Video = fakeSearch("video")
 )
-
-// Search function.
-type Search func(query string) Result
 
 func fakeSearch(kind string) Search {
 	return func(query string) Result {
