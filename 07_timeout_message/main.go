@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	ch := boring("boring!")
+	ch := boring("Joe")
 	for {
 		select {
 		case s := <-ch:

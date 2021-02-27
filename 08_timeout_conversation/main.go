@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	ch := boring("boring!")
+	ch := boring("Joe")
 	timeout := time.After(3 * time.Second)
 	for {
 		select {
