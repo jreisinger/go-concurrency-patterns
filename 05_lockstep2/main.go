@@ -12,15 +12,13 @@ type message struct {
 }
 
 func main() {
-	joe := boring("Joe")
-	ann := boring("Ann")
-	ch := fanIn(joe, ann)
-
+	ch := fanIn(boring("Joe"), boring("Ann"))
 	for i := 0; i < 5; i++ {
 		msg1 := <-ch
 		fmt.Println(msg1.str)
 		msg2 := <-ch
 		fmt.Println(msg2.str)
+
 		// Each speaker must wait for a go-ahead.
 		msg1.wait <- true
 		msg2.wait <- true
