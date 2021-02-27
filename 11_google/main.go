@@ -9,7 +9,7 @@ import (
 // Result of search.
 type Result string
 
-// Google text, image and video results of the query.
+// Google invokes Web, Image and Video searches for query serially.
 func Google(query string) (results []Result) {
 	results = append(results, Web(query))
 	results = append(results, Image(query))
