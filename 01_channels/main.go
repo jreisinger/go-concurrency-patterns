@@ -1,3 +1,6 @@
+// Launch boring() via a gourotine and read its output from a channel 5 times.
+// Boring() echoes back the argument in random (max 1 second) intervals.
+
 // Do not communicate by sharing memory; instead, share memory by communicating.
 package main
 
@@ -8,14 +11,12 @@ import (
 )
 
 func main() {
-	// var ch chan string
-	// ch = make(chan int)
-	ch := make(chan string)  // declare and initialize channel in main
-	go boring("boring!", ch) // launch (another) goroutine from main
+	ch := make(chan string)
+	go boring("boring!", ch)
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-ch)
 	}
-	fmt.Println("You're boring; I'm returning.")
+	fmt.Println("I'm returning.")
 }
 
 func boring(msg string, ch chan string) {
