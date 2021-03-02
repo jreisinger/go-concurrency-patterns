@@ -1,3 +1,5 @@
+// This time get channel from boring() instead of creating it in main. And
+// launch the goroutine from inside a boring() instead of main.
 package main
 
 import (
@@ -7,20 +9,20 @@ import (
 )
 
 func main() {
-	ch := boring("boring!") // get channel from a function
+	c := boring("boring!")
 	for i := 0; i < 5; i++ {
-		fmt.Println(<-ch)
+		fmt.Println(<-c)
 	}
-	fmt.Println("You're boring; I'm returning.")
+	fmt.Println("I'm returning.")
 }
 
 func boring(msg string) <-chan string {
-	ch := make(chan string)
-	go func() { // launch the goroutine from inside a function
+	c := make(chan string)
+	go func() {
 		for i := 0; ; i++ {
-			ch <- fmt.Sprintf("%s %d", msg, i)
+			c <- fmt.Sprintf("%s %d", msg, i)
 			time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
 		}
 	}()
-	return ch // return the channel
+	return c
 }
