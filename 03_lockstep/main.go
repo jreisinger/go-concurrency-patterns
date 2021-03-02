@@ -12,12 +12,10 @@ import (
 func main() {
 	joe := boring("Joe")
 	ann := boring("Ann")
-
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-joe)
 		fmt.Println(<-ann)
 	}
-	fmt.Println("I'm returning.")
 }
 
 func boring(msg string) <-chan string {

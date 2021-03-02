@@ -13,7 +13,6 @@ func main() {
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-c)
 	}
-	fmt.Println("I'm returning.")
 }
 
 func boring(msg string) <-chan string {
