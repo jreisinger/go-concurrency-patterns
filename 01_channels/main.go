@@ -1,5 +1,6 @@
 // Launch boring() via a gourotine and read its output from a channel 5 times.
-// Boring() echoes back the argument in random (max 1 second) intervals.
+// Boring() echoes back the argument in random (max 1 second) intervals. It
+// appends a sequence number and sends the string via a channel.
 
 // Do not communicate by sharing memory; instead, share memory by communicating.
 package main
@@ -11,17 +12,17 @@ import (
 )
 
 func main() {
-	ch := make(chan string)
-	go boring("boring!", ch)
+	c := make(chan string)
+	go boring("boring!", c)
 	for i := 0; i < 5; i++ {
-		fmt.Println(<-ch)
+		fmt.Println(<-c)
 	}
 	fmt.Println("I'm returning.")
 }
 
-func boring(msg string, ch chan string) {
+func boring(msg string, c chan string) {
 	for i := 0; ; i++ {
-		ch <- fmt.Sprintf("%s %d", msg, i)
+		c <- fmt.Sprintf("%s %d", msg, i)
 		time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
 	}
 }
