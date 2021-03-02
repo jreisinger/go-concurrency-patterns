@@ -1,5 +1,6 @@
 // Let's put sequencing back but in different way. Each speaker must wait for a
-// go-ahead.
+// go-ahead. Implement this using message struct with a message string and wait
+// channel.
 package main
 
 import (
@@ -7,11 +8,6 @@ import (
 	"math/rand"
 	"time"
 )
-
-type message struct {
-	str  string
-	wait chan bool
-}
 
 func main() {
 	c := fanIn(boring("Joe"), boring("Ann"))
@@ -23,6 +19,11 @@ func main() {
 		msg1.wait <- true
 		msg2.wait <- true
 	}
+}
+
+type message struct {
+	str  string
+	wait chan bool
 }
 
 func fanIn(inputs ...<-chan message) <-chan message {
