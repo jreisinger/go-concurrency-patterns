@@ -1,5 +1,5 @@
-// Launch boring goroutine (an independently executing function) and let it talk
-// a bit. There's no communication.
+// Launch boring goroutine (an independently executing function) and let it
+// print stuff for a while. There's no communication.
 package main
 
 import (
