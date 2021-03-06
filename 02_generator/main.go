@@ -1,5 +1,5 @@
-// This time get channel from boring instead of creating it in main. And launch
-// the goroutine from inside boring instead of main.
+// Generator is a function that returns a channel. We launch the goroutine from
+// inside the function.
 package main
 
 import (
