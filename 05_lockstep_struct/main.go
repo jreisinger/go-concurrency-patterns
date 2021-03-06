@@ -1,6 +1,5 @@
 // Let's put sequencing back but in different way. Each speaker must wait for a
-// go-ahead. Implement this using message struct with a message string and a
-// wait channel.
+// go-ahead. Implement this using message struct with a wait channel.
 package main
 
 import (
