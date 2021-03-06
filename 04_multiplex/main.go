@@ -1,5 +1,5 @@
 // This time don't print from channels in sequence but let talk whosoever is
-// ready. FanIn() takes multiple channels a returns one multiplexed channel.
+// ready. FanIn takes multiple channels a returns one multiplexed channel.
 package main
 
 import (
