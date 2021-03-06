@@ -1,4 +1,4 @@
-// Launch boring goroutine let it talk a bit and exit. There's no communication.
+// Launch boring in a goroutine and let it talk a bit. There's no communication.
 package main
 
 import (

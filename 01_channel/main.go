@@ -1,6 +1,4 @@
-// Launch boring() via a gourotine and read its output from a channel 5 times.
-// Boring() echoes back the argument in random (max 1 second) intervals. It
-// appends a sequence number and sends the string via a channel.
+// Launch boring via a gourotine and read its output from a channel 5 times.
 
 // Do not communicate by sharing memory; instead, share memory by communicating.
 package main
