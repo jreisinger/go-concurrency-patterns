@@ -1,5 +1,5 @@
 // Generator is a function that returns a channel. We launch the goroutine from
-// inside the function.
+// inside the generator.
 package main
 
 import (
@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	c := boring("boring!")
+	c := boring("boring")
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-c)
 	}
