@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	go boring("boring!")
+	go boring("boring")
 	time.Sleep(time.Second * 2)
 }
 
