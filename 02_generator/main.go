@@ -1,5 +1,5 @@
-// This time get channel from boring() instead of creating it in main. And
-// launch the goroutine from inside a boring() instead of main.
+// This time get channel from boring instead of creating it in main. And launch
+// the goroutine from inside boring instead of main.
 package main
 
 import (
