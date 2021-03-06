@@ -1,6 +1,5 @@
-// Get two channels from boring() and print from them in sequence (lockstep).
-
-// Channels as a handle on a service.
+// Get two channels from boring and print from them in sequence (lockstep).
+// Channels serve as a handle on a service.
 package main
 
 import (
