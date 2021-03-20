@@ -1,5 +1,6 @@
 // Let's put sequencing back but in different way. Each speaker must wait for a
-// go-ahead. Implement this using message struct with a wait channel.
+// go-ahead. Implement this using message struct with a wait channel. We send a
+// channel on a channel, making goroutine wait its turn.
 package main
 
 import (
