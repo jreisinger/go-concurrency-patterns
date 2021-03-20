@@ -1,4 +1,4 @@
-// Get two channels from boring and print from them in sequence (lockstep).
+// Get two channels from boring and print from them in lockstep (sequence).
 // Channels serve as a handle on a service. We can have more instances of the
 // service.
 package main
