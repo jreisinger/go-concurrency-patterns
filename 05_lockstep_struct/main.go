@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	c := fanIn(boring("Joe"), boring("Ann"))
+	c := fanIn(boring("Ann"), boring("Joe"))
 	for i := 0; i < 5; i++ {
 		msg1 := <-c
 		fmt.Println(msg1.str)
