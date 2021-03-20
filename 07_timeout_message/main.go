@@ -1,3 +1,5 @@
+// We want to receive from a channel but wait at most 800 milliseconds for the
+// value to arrive.
 package main
 
 import (
