@@ -11,7 +11,7 @@ import (
 func main() {
 	ann := boring("Ann")
 	joe := boring("Joe")
-	c := fanIn(joe, ann)
+	c := fanIn(ann, joe)
 	for i := 0; i < 5; i++ {
 		fmt.Println(<-c)
 	}
