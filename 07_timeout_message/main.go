@@ -1,5 +1,5 @@
 // We want to receive from a channel but wait at most 800 milliseconds for the
-// value to arrive.
+// value to arrive. See also https://blog.golang.org/concurrency-timeouts.
 package main
 
 import (
