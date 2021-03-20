@@ -9,11 +9,11 @@ import (
 )
 
 func main() {
-	joe := boring("Joe")
 	ann := boring("Ann")
+	joe := boring("Joe")
 	for i := 0; i < 5; i++ {
-		fmt.Println(<-joe)
 		fmt.Println(<-ann)
+		fmt.Println(<-joe)
 	}
 }
 
