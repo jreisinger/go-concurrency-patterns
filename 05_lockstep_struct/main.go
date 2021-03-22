@@ -13,8 +13,8 @@ func main() {
 	c := fanIn(boring("Ann"), boring("Joe"))
 	for i := 0; i < 5; i++ {
 		msg1 := <-c
-		fmt.Println(msg1.str)
 		msg2 := <-c
+		fmt.Println(msg1.str)
 		fmt.Println(msg2.str)
 		msg1.wait <- true
 		msg2.wait <- true
